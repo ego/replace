@@ -41,5 +41,5 @@ Link `replace` CLI
 
 Make release
 ```bash
-./scripts/release.vsh
+./scripts/release.vsh && ./scripts/install_replace.vsh
 ```
