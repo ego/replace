@@ -43,3 +43,10 @@ Make release
 ```bash
 ./scripts/release.vsh && ./scripts/install_replace.vsh
 ```
+
+TODO:
+
+    * Tests
+    * Performance benchmarks
+    * Home brew formula
+    * More features
