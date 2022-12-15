@@ -19,7 +19,7 @@ fn main() {
 	in_path := fp.string('path', `p`, '', 'Replace string in path to.')
 	search_path := fp.string('dir', `d`, '.', 'Search path.')
 
-	fp.usage_example('replace -o old-text -n new-text -d ./search_path\nreplace old-text new-text')
+	fp.usage_example('-o "old text" -n "new text" -d ./search_path\nreplace "old text" "new text"')
 	fp.limit_free_args(0, 2)!
 
 	additional_args := fp.finalize() or {
