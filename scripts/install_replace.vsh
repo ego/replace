@@ -5,4 +5,4 @@ fn sh(cmd string) {
 	print(execute_or_exit(cmd).output)
 }
 
-sh('cp replace /usr/local/bin')
+sh('cp ./bin/replace /usr/local/bin')

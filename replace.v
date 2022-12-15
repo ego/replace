@@ -16,6 +16,7 @@ fn main() {
 
 	mut old := fp.string('old', `o`, '', 'String to find.')
 	mut new := fp.string('new', `n`, '', 'String to replace.')
+	in_path := fp.string('path', `p`, '', 'Replace string in path to.')
 	search_path := fp.string('dir', `d`, '.', 'Search path.')
 
 	fp.usage_example('replace -o old-text -n new-text -d ./search_path\nreplace old-text new-text')
@@ -38,8 +39,10 @@ fn main() {
 			return
 		}
 
-		if f.contains('/.git/') {
-			return
+		for skip in ['/.git/', '/node_modules/'] {
+			if f.contains(skip) {
+				return
+			}
 		}
 
 		if os.file_name(f).starts_with('.') {
@@ -69,7 +72,7 @@ fn main() {
 			println('Replace content in file: ${path}')
 		}
 
-		if os.file_name(path).contains(old) {
+		if in_path != '' && os.file_name(path).contains(old) {
 			content = os.file_name(path).replace(old, new)
 			new_path := path.trim_string_right(os.file_name(path)) +
 				os.file_name(path).replace(old, new)

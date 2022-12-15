@@ -4,8 +4,11 @@ CLI application that find and replace string in files.
 Usage:
 
 ```bash
+replace 'old text' 'new text'
 replace -o old-text -n new-text -d ./search_path
-replace old-text new-text
+
+# replace file name to use `-p`
+replace -o old-text -n new-text -d ./search_path -p t
 ```
 
 Installing V
@@ -27,11 +30,16 @@ Follow the simple instructions here: https://github.com/vlang/v/blob/master/doc/
 
 Build `replace` CLI
 ```bash
-v -prod . && ./install_replace.vsh
+v -prod . -o bin/replace && ./scripts/install_replace.vsh
 ```
 
 Link `replace` CLI
 ```bash
-./install_replace.vsh
+./scripts/install_replace.vsh
 ```
  and call `replace` from any path.
+
+Make release
+```bash
+./scripts/release.vsh
+```
