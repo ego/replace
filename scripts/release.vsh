@@ -21,6 +21,7 @@ fn sh(cmd string) {
 }
 
 fn bump_and_release() {
+	sh('v test tests')
 	sh('git checkout ${mainline_branch}')
 	sh('git pull origin ${mainline_branch}')
 	sh('git merge --no-ff ${mainline_branch}')

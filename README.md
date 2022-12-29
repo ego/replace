@@ -44,9 +44,14 @@ Make release
 ./scripts/release.vsh && ./scripts/install_replace.vsh
 ```
 
+Test code
+```bash
+v test tests
+```
+
 TODO:
 
-    * Tests
+    * Performance threads/queue.
     * Performance benchmarks
     * Home brew formula
     * More features
